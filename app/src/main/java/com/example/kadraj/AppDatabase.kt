@@ -5,13 +5,14 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.kadraj.Constants.DATABASE_NAME
-import com.example.kadraj.data.model.User
+import com.example.kadraj.data.dao.UserDao
+import com.example.kadraj.data.entity.User
 
 @Database(
     entities = [User::class], version = 1, exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
-    // TODO add all DAOs
+    abstract fun userDao(): UserDao
 
     companion object {
         @Volatile
