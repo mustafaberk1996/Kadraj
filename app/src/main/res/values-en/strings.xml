@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kadraj</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="photoFragmentTitle">Photos</string>
+    <string name="videoFragmentTitle">Videos</string>
+    <string name="mainPageTitle">Main Page</string>
+    <string name="user">User</string>
+    <string name="exit">Exit</string>
+    <string name="welcome">Welcome</string>
+    <string name="password">Password</string>
+    <string name="enter_username">Please enter user name</string>
+    <string name="enter_password">Please enter password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="login">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+</resources>
