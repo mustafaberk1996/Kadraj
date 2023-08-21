@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/photosFragment"
@@ -36,4 +36,18 @@
             android:id="@+id/action_mainFragment_to_videosFragment"
             app:destination="@id/videosFragment" />
     </fragment>
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.kadraj.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+
+
 </navigation>
