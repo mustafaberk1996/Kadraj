@@ -14,17 +14,8 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="30dp"
-        android:layout_margin="20dp"
-        android:background="@drawable/linear_layout_backround"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-
-
-        <ImageView
-            android:src="@drawable/baseline_camera_alt_24"
-            android:layout_width="150dp"
-            android:layout_height="200dp"/>
 
         <Button
             android:id="@+id/btnPhoto"
