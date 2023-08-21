@@ -51,4 +51,9 @@
             android:id="@+id/action_usersFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/collectionsFragment"
+        android:name="com.example.kadraj.ui.collections.CollectionsFragment"
+        android:label="fragment_collections"
+        tools:layout="@layout/fragment_collections" />
 </navigation>
