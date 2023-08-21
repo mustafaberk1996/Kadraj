@@ -15,7 +15,6 @@ import com.example.kadraj.AppDatabase_Impl
 import com.example.kadraj.R
 import com.example.kadraj.data.state.LoginState
 import com.example.kadraj.databinding.FragmentLoginBinding
-import com.example.kadraj.ui.MainActivity
 import com.example.kadraj.viewmodel.LoginViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
