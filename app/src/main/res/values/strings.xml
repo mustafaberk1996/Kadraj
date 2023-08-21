@@ -5,4 +5,7 @@
     <string name="name">isim</string>
     <string name="surname">Soyad</string>
     <string name="user">User</string>
+    <string name="photoFragmentTitle">Photo Page</string>
+    <string name="videoFragmentTitle">Video Page\n</string>
+    <string name="mainPageTitle">Main Page</string>
 </resources>

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/photosFragment"
         android:name="com.example.kadraj.ui.photoList.PhotosFragment"
-        android:label="Photo Page"
+        android:label="@string/photoFragmentTitle"
         tools:layout="@layout/fragment_photos" >
 
         <action
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/videosFragment"
         android:name="com.example.kadraj.ui.videos.VideosFragment"
-        android:label="Video Page"
+        android:label="@string/videoFragmentTitle"
         tools:layout="@layout/fragment_videos" >
         <action
             android:id="@+id/action_videosFragment_to_mainFragment"
@@ -27,7 +27,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.kadraj.ui.MainFragment"
-        android:label="Anasayfa"
+        android:label="@string/mainPageTitle"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_photosFragment"
