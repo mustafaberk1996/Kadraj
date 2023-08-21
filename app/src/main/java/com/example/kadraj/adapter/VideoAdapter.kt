@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import coil.load
+import com.example.kadraj.data.api.model.Video
 import com.example.kadraj.databinding.VideosListItemBinding
-import com.example.kadraj.model.Video
+
 
 class VideoAdapter(val context:Context, val videoList:List<Video>, val onClick:(video:Video) -> Unit):RecyclerView.Adapter<VideoAdapter.CustomViewHolder>() {
 
