@@ -2,4 +2,7 @@
     <string name="app_name">Kadraj</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">isim</string>
+    <string name="surname">Soyad</string>
+    <string name="user">User</string>
 </resources>
