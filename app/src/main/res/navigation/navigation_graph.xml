@@ -35,5 +35,17 @@
         <action
             android:id="@+id/action_mainFragment_to_videosFragment"
             app:destination="@id/videosFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_usersFragment"
+            app:destination="@id/usersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.example.kadraj.ui.users.UsersFragment"
+        android:label="fragment_users"
+        tools:layout="@layout/fragment_users" >
+        <action
+            android:id="@+id/action_usersFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
 </navigation>
