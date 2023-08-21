@@ -7,42 +7,13 @@
     tools:context=".ui.MainActivity">
 
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="30dp"
-        android:layout_margin="20dp"
-        android:background="@drawable/linear_layout_backround"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:src="@drawable/baseline_camera_alt_24"
-            android:layout_width="150dp"
-            android:layout_height="200dp"/>
-
-        <Button
-            android:id="@+id/btnPhoto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Photo" />
-
-        <Button
-            android:id="@+id/btnVideo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Videos" />
-
-        <Button
-            android:id="@+id/btnExit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Exit" />
-
-
-    </LinearLayout>
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation_graph"
+ />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
