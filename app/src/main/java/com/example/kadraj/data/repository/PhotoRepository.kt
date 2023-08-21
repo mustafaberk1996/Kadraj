@@ -5,4 +5,6 @@ import com.example.kadraj.data.api.model.Photo
 interface PhotoRepository {
 
     suspend fun getAllPhotos():List<Photo>
+
+    suspend fun getFavouritePhotos(): List<Photo>?
 }
