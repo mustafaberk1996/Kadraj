@@ -9,7 +9,7 @@ import coil.load
 import com.example.kadraj.databinding.VideosListItemBinding
 import com.example.kadraj.model.Video
 
-class VideoAdapter(val context:Context, val videoList:List<Video>):RecyclerView.Adapter<VideoAdapter.CustomViewHolder>() {
+class VideoAdapter(val context:Context, val videoList:List<Video>, val onClick:(video:Video) -> Unit):RecyclerView.Adapter<VideoAdapter.CustomViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         return CustomViewHolder(
@@ -27,6 +27,10 @@ class VideoAdapter(val context:Context, val videoList:List<Video>):RecyclerView.
         holder.tvVideoDuration.text
         holder.tvVideoPublisher.text
         holder.ivVideoImage.load(video.video_pictures)
+
+        holder.itemView.setOnClickListener {
+            onClick(video)
+        }
     }
 
     class CustomViewHolder(binding:VideosListItemBinding):ViewHolder(binding.root) {
