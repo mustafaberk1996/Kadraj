@@ -16,5 +16,15 @@
         tools:listitem="@layout/videos_list_item"
         />
 
+    <ProgressBar
+        android:id="@+id/progressBarVideosPage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
