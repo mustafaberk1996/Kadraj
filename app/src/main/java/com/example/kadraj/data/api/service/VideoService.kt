@@ -13,6 +13,6 @@ interface VideoService {
     )
 
     @GET("videos/search")
-    suspend fun getAll(@Query("query") queryText:String): ResponseVideoList
+    suspend fun getAllVideo(@Query("query") queryText:String): ResponseVideoList
 
 }
