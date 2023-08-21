@@ -16,7 +16,7 @@ android {
     defaultConfig {
         applicationId "com.example.kadraj"
         minSdk 24
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -41,8 +41,9 @@ android {
 dependencies {
 
     implementation("io.coil-kt:coil:2.4.0")
-
     implementation("com.flaviofaria:kenburnsview:1.0.7")
+
+
     implementation 'androidx.room:room-common:2.5.2'
     def room_version = "2.5.2"
     implementation "androidx.room:room-runtime:$room_version"
