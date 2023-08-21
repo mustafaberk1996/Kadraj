@@ -2,4 +2,10 @@
     <string name="app_name">Kadraj</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="somethings_wrong">Birşeyler yanlış gitti</string>
+    <string name="user_already_exists">Bu kullanıcı zaten var</string>
+    <string name="user_not_found">Kullanıcı bulunamadı</string>
+    <string name="fill_in_the_blank">Lütfen boş alanları doldurunuz</string>
+    <string name="user_information_wrong">Kullanıcı bilgileri hatalı</string>
+    <string name="login_success">İşlem başarılı</string>
 </resources>
