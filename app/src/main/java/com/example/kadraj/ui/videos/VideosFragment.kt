@@ -1,4 +1,4 @@
-package com.example.kadraj.ui
+package com.example.kadraj.ui.videos
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
