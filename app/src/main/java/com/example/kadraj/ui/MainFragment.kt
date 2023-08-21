@@ -26,7 +26,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         }
         binding.btnExit.setOnClickListener {
             activity?.finish()
-
         }
     }
 }
