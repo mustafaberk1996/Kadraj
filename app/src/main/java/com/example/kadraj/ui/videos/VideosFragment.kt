@@ -1,4 +1,4 @@
-package com.example.kadraj.ui
+package com.example.kadraj.ui.videos
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import com.example.kadraj.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class PhotosFragment : Fragment(R.layout.fragment_photos) {
+class VideosFragment : Fragment(R.layout.fragment_videos) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
