@@ -1,10 +1,12 @@
-package com.example.kadraj
+package com.example.kadraj.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import com.example.kadraj.R
 
-class VideosFragment : Fragment(R.layout.fragment_videos) {
+
+class PhotosFragment : Fragment(R.layout.fragment_photos) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
