@@ -2,6 +2,7 @@ package com.example.kadraj.data.di
 
 import android.content.Context
 import com.example.kadraj.AppDatabase
+import com.example.kadraj.data.dao.PhotoDao
 import com.example.kadraj.data.dao.UserDao
 import dagger.Module
 import dagger.Provides
@@ -24,5 +25,11 @@ class DatabaseModule {
     @Singleton
     fun provideUserDao(appDatabase: AppDatabase): UserDao {
         return appDatabase.userDao()
+    }
+
+    @Provides
+    @Singleton
+    fun providePhotoDao(appDatabase: AppDatabase): PhotoDao {
+        return appDatabase.photoDao()
     }
 }
