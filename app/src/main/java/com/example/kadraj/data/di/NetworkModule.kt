@@ -2,6 +2,7 @@ package com.example.kadraj.data.di
 
 
 import com.example.kadraj.Constants
+import com.example.kadraj.data.api.service.CollectionService
 import com.example.kadraj.data.api.service.PhotoService
 import dagger.Module
 import dagger.Provides
@@ -23,6 +24,9 @@ object NetworkModule {
 
     @Provides
     fun providePhotoService(retrofit: Retrofit): PhotoService = retrofit.create(PhotoService::class.java)
+
+    @Provides
+    fun provideCollectionService(retrofit: Retrofit): CollectionService = retrofit.create(CollectionService::class.java)
 
 
 }
