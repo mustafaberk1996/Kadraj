@@ -1,10 +1,9 @@
-package com.example.kadraj
+package com.example.kadraj.ui.photoList
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import com.example.kadraj.R
 
 
 class PhotosFragment : Fragment(R.layout.fragment_photos) {
