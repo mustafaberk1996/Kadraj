@@ -9,6 +9,10 @@ android {
     namespace 'com.example.kadraj'
     compileSdk 34
 
+    buildFeatures{
+        viewBinding true
+    }
+
     defaultConfig {
         applicationId "com.example.kadraj"
         minSdk 24
