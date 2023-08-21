@@ -1,4 +1,4 @@
-package com.example.kadraj.ui
+package com.example.kadraj.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
