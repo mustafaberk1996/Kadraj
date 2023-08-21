@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat.finishAffinity
 import androidx.navigation.fragment.findNavController
 import com.example.kadraj.R
 import com.example.kadraj.databinding.FragmentMainBinding
+import kotlin.system.exitProcess
 
 class MainFragment : Fragment(R.layout.fragment_main) {
     lateinit var binding:FragmentMainBinding
@@ -21,6 +23,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
         binding.btnVideo.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_videosFragment)
+        }
+        binding.btnExit.setOnClickListener {
+            activity?.finish()
+
         }
     }
 }
