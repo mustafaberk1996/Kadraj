@@ -50,6 +50,17 @@
     </fragment>
 
     <fragment
+        android:id="@+id/userUpdateFragment"
+        android:name="com.example.kadraj.ui.user.UserUpdateFragment"
+        android:label="fragment_user_settings"
+        tools:layout="@layout/fragment_user_update">
+
+        <argument android:name="userID"
+            app:argType="Integer"/>
+    </fragment>
+
+
+    <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.kadraj.ui.login.LoginFragment"
         android:label="fragment_login"
@@ -58,5 +69,5 @@
             android:id="@+id/action_loginFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
-    
+
 </navigation>
