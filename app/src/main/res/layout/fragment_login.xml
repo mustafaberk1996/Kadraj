@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="WELCOME"
+            android:text="@string/welcome"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
             android:layout_marginTop="20dp"
-            android:text="User"
+            android:text="@string/user"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -45,7 +45,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="5dp"
             android:drawableRight="@drawable/loginemail_user_icon"
-            android:hint="Enter Username"
+            android:hint="@string/enter_username"
             android:inputType="textEmailAddress"
             android:textSize="15sp" />
 
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
             android:layout_marginTop="10dp"
-            android:text="Password"
+            android:text="@string/password"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -65,7 +65,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="5dp"
             android:drawableRight="@drawable/loginpassword_eye_icon"
-            android:hint="Enter Password"
+            android:hint="@string/enter_password"
             android:inputType="textPassword"
             android:textSize="15sp" />
 
@@ -78,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Remember Me" />
+                android:text="@string/remember_me" />
 
         </LinearLayout>
 
@@ -89,13 +89,24 @@
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/loginpassive"
             android:text="Logın" />
+            android:text="@string/login" />
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Sign Up" />
+            android:text="@string/sign_up" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
 
     </LinearLayout>
 
