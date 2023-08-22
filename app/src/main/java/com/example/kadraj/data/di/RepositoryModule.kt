@@ -39,4 +39,8 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun provideVideoRepository(videoRepositoryImpl: VideoRepositoryImpl):VideoRepository = videoRepositoryImpl
+
+    @Provides
+    @Singleton
+    fun provideCollectionRepository(collectionRepositoryImpl: CollectionRepositoryImpl):CollectionRepository = collectionRepositoryImpl
 }

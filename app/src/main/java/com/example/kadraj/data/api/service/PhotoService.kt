@@ -1,6 +1,7 @@
 package com.example.kadraj.data.api.service
 
 import com.example.kadraj.Constants
+import com.example.kadraj.data.api.model.CollectionResponse
 import com.example.kadraj.data.api.model.ResponsePhotoList
 import retrofit2.http.GET
 import retrofit2.http.Headers
