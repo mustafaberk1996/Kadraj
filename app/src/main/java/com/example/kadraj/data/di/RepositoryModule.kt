@@ -7,6 +7,8 @@ import com.example.kadraj.data.repository.PhotoRepository
 import com.example.kadraj.data.repository.PhotoRepositoryImpl
 import com.example.kadraj.data.repository.VideoRepository
 import com.example.kadraj.data.repository.VideoRepositoryImpl
+import com.example.kadraj.data.repository.UserRepository
+import com.example.kadraj.data.repository.UserRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,6 +26,10 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun providePhotoRepository(photoRepositoryImpl: PhotoRepositoryImpl):PhotoRepository = photoRepositoryImpl
+
+    @Provides
+    @Singleton
+    fun provideUserRepository(userRepositoryImpl: UserRepositoryImpl) :UserRepository = userRepositoryImpl
 
     @Provides
     @Singleton
