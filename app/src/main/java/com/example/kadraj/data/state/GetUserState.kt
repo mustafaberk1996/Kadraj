@@ -6,4 +6,5 @@ sealed class GetUserState {
     object Idle : GetUserState()
     class Result(val user: User) : GetUserState()
     class Error(val throwable: Throwable) : GetUserState()
+
 }

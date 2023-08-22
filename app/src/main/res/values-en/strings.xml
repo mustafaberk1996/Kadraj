@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Kadraj</string>
-    <string name="name">Name</string>
-    <string name="surname">Surname</string>
+    <string name="name_surname">Name Surname</string>
     <string name="photoFragmentTitle">Photos</string>
     <string name="videoFragmentTitle">Videos</string>
     <string name="mainPageTitle">Main Page</string>

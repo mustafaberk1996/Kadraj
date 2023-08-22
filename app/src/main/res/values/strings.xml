@@ -9,8 +9,8 @@
     <string name="user_information_wrong">Kullanıcı bilgileri hatalı</string>
     <string name="login_success">İşlem başarılı</string>
     <!-- UserFragment -->
-    <string name="name">İsim</string>
-    <string name="surname">Soyisim</string>
+    <string name="name_surname">İsim Soyisim</string>
+    <string name="email" translatable="false">Email</string>
     <!-- Toolbar Title and Main Fragment -->
     <string name="photoFragmentTitle">Fotoğraflar</string>
     <string name="videoFragmentTitle">Videolar</string>

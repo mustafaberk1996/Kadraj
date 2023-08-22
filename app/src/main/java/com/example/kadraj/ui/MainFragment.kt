@@ -31,7 +31,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
 
         binding.btnUser.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_usersFragment)
+            findNavController().navigate(R.id.action_mainFragment_to_userProfileFragment)
         }
         binding.btnExit.setOnClickListener {
             activity?.finish()
