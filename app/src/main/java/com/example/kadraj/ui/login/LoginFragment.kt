@@ -8,6 +8,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.example.kadraj.R
 import com.example.kadraj.data.state.UserAddState
 import com.example.kadraj.databinding.FragmentLoginBinding
@@ -21,6 +22,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentLoginBinding.bind(view)
+
 
         // observeUserAddState()
 
