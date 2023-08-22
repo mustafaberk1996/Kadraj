@@ -14,9 +14,6 @@
         <action
             android:id="@+id/action_photosFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
-        <action
-            android:id="@+id/action_photosFragment_to_photoDetail"
-            app:destination="@id/photoDetail" />
     </fragment>
     <fragment
         android:id="@+id/videosFragment"
