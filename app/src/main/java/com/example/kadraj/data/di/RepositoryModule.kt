@@ -1,6 +1,7 @@
 package com.example.kadraj.data.di
 
-import com.example.kadraj.data.api.model.Video
+import com.example.kadraj.data.repository.CollectionRepository
+import com.example.kadraj.data.repository.CollectionRepositoryImpl
 import com.example.kadraj.data.repository.LoginRepository
 import com.example.kadraj.data.repository.LoginRepositoryImpl
 import com.example.kadraj.data.repository.PhotoRepository
@@ -34,4 +35,8 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun provideVideoRepository(videoRepositoryImpl: VideoRepositoryImpl):VideoRepository = videoRepositoryImpl
+
+    @Provides
+    @Singleton
+    fun provideCollectionRepository(collectionRepositoryImpl: CollectionRepositoryImpl):CollectionRepository = collectionRepositoryImpl
 }
