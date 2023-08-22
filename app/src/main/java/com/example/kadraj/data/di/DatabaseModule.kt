@@ -1,8 +1,10 @@
 package com.example.kadraj.data.di
 
 import android.content.Context
+import androidx.room.Room
 import com.example.kadraj.AppDatabase
 import com.example.kadraj.data.dao.PhotoDao
+import com.example.kadraj.Constants
 import com.example.kadraj.data.dao.UserDao
 import dagger.Module
 import dagger.Provides
@@ -18,7 +20,7 @@ class DatabaseModule {
     @Provides
     @Singleton
     fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {
-        return AppDatabase.invoke(context)
+        return Room.databaseBuilder(context, AppDatabase::class.java, Constants.DATABASE_NAME).build()
     }
 
     @Provides
