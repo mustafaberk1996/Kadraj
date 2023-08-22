@@ -80,7 +80,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                         is UserAddState.Success ->{
                             binding.progressBarRegister.isVisible = false
                             val preferences = activity?.getSharedPreferences(SHARED_PREF_NAME, AppCompatActivity.MODE_PRIVATE)
-                            preferences?.edit()?.putInt(LOGGED_USER_ID,it.userId)
+                            preferences?.edit()?.putInt(LOGGED_USER_ID,it.userId)?.apply()
                             findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
                         }
                         is UserAddState.Error ->{
