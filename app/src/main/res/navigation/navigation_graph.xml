@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/photosFragment"
@@ -51,9 +51,31 @@
             android:id="@+id/action_usersFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/photoDetail"
         android:name="com.example.kadraj.PhotoDetail"
         android:label="fragment_photo_detail"
         tools:layout="@layout/fragment_photo_detail" />
+
+    <fragment
+        android:id="@+id/userUpdateFragment"
+        android:name="com.example.kadraj.ui.user.UserUpdateFragment"
+        android:label="fragment_user_settings"
+        tools:layout="@layout/fragment_user_update">
+
+        <argument android:name="userID"
+            app:argType="Integer"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.kadraj.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
 </navigation>
