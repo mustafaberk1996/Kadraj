@@ -4,15 +4,19 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import com.example.kadraj.Constants.LOGGED_USER_ID
+import com.example.kadraj.Constants.SHARED_PREF_NAME
 import com.example.kadraj.R
 import com.example.kadraj.data.state.RegisterMessageState
 import com.example.kadraj.data.state.UserAddState
+import com.example.kadraj.databinding.FragmentRegisterBinding
 import kotlinx.coroutines.launch
 import com.example.kadraj.databinding.FragmentRegisterBinding
 
@@ -26,6 +30,8 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentRegisterBinding.bind(view)
+
+
         observeUserAddState()
         observeMessage()
         listeners()
@@ -67,7 +73,8 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                         }
                         is UserAddState.Success ->{
                             binding.progressBarRegister.isVisible = false
-
+                            val preferences = activity?.getSharedPreferences(SHARED_PREF_NAME, AppCompatActivity.MODE_PRIVATE)
+                            preferences?.edit()?.putInt(LOGGED_USER_ID,it.userId)?.apply()
                             findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
                         }
                         is UserAddState.Error ->{
