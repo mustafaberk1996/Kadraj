@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_photosFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_photosFragment_to_photoDetail"
+            app:destination="@id/photoDetail" />
     </fragment>
     <fragment
         android:id="@+id/videosFragment"
@@ -103,11 +106,5 @@
     <fragment
         android:id="@+id/collectionsDetailFragment"
         android:name="CollectionsDetailFragment"
-        android:label="CollectionsDetailFragment">
-
-        <argument
-            android:name="collectionId"
-            app:argType="string" />
-
-    </fragment>
+        android:label="CollectionsDetailFragment" />
 </navigation>

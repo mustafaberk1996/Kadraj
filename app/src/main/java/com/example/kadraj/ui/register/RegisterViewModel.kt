@@ -3,17 +3,23 @@ package com.example.kadraj.ui.register
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.kadraj.AppDatabase
+import com.example.kadraj.data.dao.UserDao
 import com.example.kadraj.data.entity.User
 import com.example.kadraj.data.state.RegisterMessageState
 import com.example.kadraj.data.state.UserAddState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class RegisterViewModel:ViewModel() {
+@HiltViewModel
+class RegisterViewModel @Inject constructor(
+    private val userDao:UserDao
+):ViewModel() {
 
     private val _userAddState: MutableStateFlow<UserAddState> = MutableStateFlow(UserAddState.Idle)
     val userAddState: StateFlow<UserAddState> = _userAddState
@@ -21,7 +27,7 @@ class RegisterViewModel:ViewModel() {
     private val _message: MutableSharedFlow<RegisterMessageState> = MutableSharedFlow()
     val message: SharedFlow<RegisterMessageState> = _message
 
-    fun insert(database: AppDatabase,name:String, surname:String, email:String, password:String, confirm:String) {
+    fun insert(name:String, surname:String, email:String, password:String, confirm:String) {
         viewModelScope.launch(Dispatchers.IO) {
             var result:Long = -1
             if(!email.isNullOrEmpty() && !password.isNullOrEmpty()){
@@ -30,7 +36,7 @@ class RegisterViewModel:ViewModel() {
 
                     kotlin.runCatching {
                         _userAddState.emit(UserAddState.Loading)
-                        result = database.userDao().insert(user)
+                        result = userDao.insert(user)
                         if(result > -1){
                             _message.emit(RegisterMessageState.Success)
                         }else{

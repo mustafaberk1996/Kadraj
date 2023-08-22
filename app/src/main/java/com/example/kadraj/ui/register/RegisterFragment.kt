@@ -2,9 +2,7 @@ package com.example.kadraj.ui.register
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
@@ -12,15 +10,11 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import com.example.kadraj.AppDatabase
 import com.example.kadraj.R
-import com.example.kadraj.data.state.LoginMessageState
 import com.example.kadraj.data.state.RegisterMessageState
 import com.example.kadraj.data.state.UserAddState
-import com.example.kadraj.databinding.FragmentLoginBinding
-import com.example.kadraj.databinding.FragmentRegisterBinding
-import com.example.kadraj.ui.login.LoginViewModel
 import kotlinx.coroutines.launch
+import com.example.kadraj.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment(R.layout.fragment_register) {
 
@@ -88,7 +82,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
 
     private fun listeners() {
         binding.btnSignUpRegister.setOnClickListener {
-            viewModel.insert(AppDatabase.invoke(requireContext()),binding.etName.text.toString().trim(),binding.etSurname.text.toString().trim(),binding.etEmail.text.toString().trim(), binding.etPassword.text.toString().trim(), binding.etConfirmPassword.text.toString().trim())
+            viewModel.insert(binding.etName.text.toString().trim(),binding.etSurname.text.toString().trim(),binding.etEmail.text.toString().trim(), binding.etPassword.text.toString().trim(), binding.etConfirmPassword.text.toString().trim())
         }
 
         binding.btnLoginRegister.setOnClickListener {
