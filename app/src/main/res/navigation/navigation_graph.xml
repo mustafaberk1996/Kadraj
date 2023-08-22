@@ -42,8 +42,9 @@
             android:id="@+id/action_mainFragment_to_collectionsFragment"
             app:destination="@id/collectionsFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_usersFragment"
+            android:id="@+id/action_mainFragment_to_userProfileFragment"
             app:destination="@id/userProfileFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/userProfileFragment"

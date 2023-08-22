@@ -13,21 +13,21 @@ class UserProfileViewModel @Inject constructor(
     private val userRepository: UserRepository
 ):ViewModel() {
 
-    private val _getUserState:MutableStateFlow<GetUserState> = MutableStateFlow(GetUserState.Idle)
-    val getUserState:StateFlow<GetUserState> =_getUserState
-
-
-    fun getUser(id:Int){
-        viewModelScope.launch {
-            runCatching {
-                val user=userRepository.getUserById(id)
-                _getUserState.value =GetUserState.Result(user!!)
-            }.onFailure {
-                _getUserState.value=GetUserState.Error(it)
-            }
-        }
-
-    }
+//    private val _getUserState:MutableStateFlow<GetUserState> = MutableStateFlow(GetUserState.Idle)
+//    val getUserState:StateFlow<GetUserState> =_getUserState
+//
+//
+//    fun getUser(id:Int){
+//        viewModelScope.launch {
+//            runCatching {
+//                val user=userRepository.getUserById(id)
+//                _getUserState.value =GetUserState.Result(user!!)
+//            }.onFailure {
+//                _getUserState.value=GetUserState.Error(it)
+//            }
+//        }
+//
+//    }
 
 
 }

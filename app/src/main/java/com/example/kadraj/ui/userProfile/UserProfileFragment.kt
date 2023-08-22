@@ -21,50 +21,50 @@ import kotlinx.coroutines.launch
 class UserProfileFragment : Fragment(R.layout.fragment_user_profile) {
 
 
-    private lateinit var binding: FragmentUserProfileBinding
-    private val viewModel:UserProfileViewModel by activityViewModels ()
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding= FragmentUserProfileBinding.bind(view)
-
-
-        val sharedPreferences = activity?.getSharedPreferences(SHARED_PREF_NAME,AppCompatActivity.MODE_PRIVATE)
-
-        val getId = sharedPreferences?.getInt(LOGGED_USER_ID,0)
-
-        viewModel.getUser(getId!!)
-        observeGetUserById()
-
-
-        binding.ivEdit.setOnClickListener {
-            val action= UserProfileFragmentDirections.actionUserProfileFragmentToUserUpdateFragment(getId)
-            findNavController().navigate(action)
-        }
-
-
-    }
-
-    private fun observeGetUserById() {
-
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.CREATED){
-                viewModel.getUserState.collect{
-                    when(it){
-                        is GetUserState.Idle->{}
-                        is GetUserState.Result->{
-                            binding.tvFullName.text="${it.user.name} ${it.user.surname}"
-                            binding.tvEmail.text=it.user.email
-                            binding.tvPassword.text=it.user.password
-                        }
-                        is GetUserState.Error->{
-                            Toast.makeText(requireContext(),R.string.user_not_found,Toast.LENGTH_LONG).show()
-                        }
-
-                    }
-                }
-            }
-        }
-    }
+//    private lateinit var binding: FragmentUserProfileBinding
+//    private val viewModel:UserProfileViewModel by activityViewModels ()
+//
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        binding= FragmentUserProfileBinding.bind(view)
+//
+//
+//        val sharedPreferences = activity?.getSharedPreferences(SHARED_PREF_NAME,AppCompatActivity.MODE_PRIVATE)
+//
+//        val getId = sharedPreferences?.getInt(LOGGED_USER_ID,0)
+//
+//        viewModel.getUser(0)
+//        observeGetUserById()
+//
+//
+////        binding.ivEdit.setOnClickListener {
+////            val action= UserProfileFragmentDirections.actionUserProfileFragmentToUserUpdateFragment(0)
+////            findNavController().navigate(action)
+////        }
+//
+//
+//    }
+//
+//    private fun observeGetUserById() {
+//
+//        lifecycleScope.launch {
+//            repeatOnLifecycle(Lifecycle.State.CREATED){
+//                viewModel.getUserState.collect{
+//                    when(it){
+//                        is GetUserState.Idle->{}
+//                        is GetUserState.Result->{
+//                            binding.tvFullName.text="${it.user.name} ${it.user.surname}"
+//                            binding.tvEmail.text=it.user.email
+//                            binding.tvPassword.text=it.user.password
+//                        }
+//                        is GetUserState.Error->{
+//                            Toast.makeText(requireContext(),R.string.user_not_found,Toast.LENGTH_LONG).show()
+//                        }
+//
+//                    }
+//                }
+//            }
+//        }
+//    }
 
 }
