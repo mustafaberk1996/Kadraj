@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
@@ -20,51 +21,52 @@ import kotlinx.coroutines.launch
 
 class UserProfileFragment : Fragment(R.layout.fragment_user_profile) {
 
+    companion object {
+        const val GET_ID_KEY="GET_ID_KEY"
+    }
 
-//    private lateinit var binding: FragmentUserProfileBinding
-//    private val viewModel:UserProfileViewModel by activityViewModels ()
-//
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        binding= FragmentUserProfileBinding.bind(view)
-//
-//
-//        val sharedPreferences = activity?.getSharedPreferences(SHARED_PREF_NAME,AppCompatActivity.MODE_PRIVATE)
-//
-//        val getId = sharedPreferences?.getInt(LOGGED_USER_ID,0)
-//
-//        viewModel.getUser(0)
-//        observeGetUserById()
-//
-//
-////        binding.ivEdit.setOnClickListener {
-////            val action= UserProfileFragmentDirections.actionUserProfileFragmentToUserUpdateFragment(0)
-////            findNavController().navigate(action)
-////        }
-//
-//
-//    }
-//
-//    private fun observeGetUserById() {
-//
-//        lifecycleScope.launch {
-//            repeatOnLifecycle(Lifecycle.State.CREATED){
-//                viewModel.getUserState.collect{
-//                    when(it){
-//                        is GetUserState.Idle->{}
-//                        is GetUserState.Result->{
-//                            binding.tvFullName.text="${it.user.name} ${it.user.surname}"
-//                            binding.tvEmail.text=it.user.email
-//                            binding.tvPassword.text=it.user.password
-//                        }
-//                        is GetUserState.Error->{
-//                            Toast.makeText(requireContext(),R.string.user_not_found,Toast.LENGTH_LONG).show()
-//                        }
-//
-//                    }
-//                }
-//            }
-//        }
-//    }
+    private lateinit var binding: FragmentUserProfileBinding
+    private val viewModel:UserProfileViewModel by activityViewModels ()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding= FragmentUserProfileBinding.bind(view)
+
+
+        val sharedPreferences = activity?.getSharedPreferences(SHARED_PREF_NAME,AppCompatActivity.MODE_PRIVATE)
+
+       val getId = sharedPreferences?.getInt(LOGGED_USER_ID,0)
+
+        viewModel.getUser(getId!!)
+        observeGetUserById()
+
+
+        binding.ivEdit.setOnClickListener {
+            //val action= UserProfileFragmentDirections.actionUserProfileFragmentToUserUpdateFragment(getId)
+            findNavController().navigate(R.id.action_userProfileFragment_to_userUpdateFragment, bundleOf( GET_ID_KEY to getId))
+        }
+    }
+
+    private fun observeGetUserById() {
+
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.CREATED){
+                viewModel.getUserState.collect{
+                    when(it){
+                        is GetUserState.Idle->{}
+                        is GetUserState.Result->{
+                            binding.tvFullName.text="${it.user.name} ${it.user.surname}"
+                            binding.tvEmail.text=it.user.email
+                            binding.tvPassword.text=it.user.password
+                        }
+                        is GetUserState.Error->{
+                            Toast.makeText(requireContext(),R.string.user_not_found,Toast.LENGTH_LONG).show()
+                        }
+
+                    }
+                }
+            }
+        }
+    }
 
 }
