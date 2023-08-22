@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/photosFragment"
         android:name="com.example.kadraj.ui.photoList.PhotosFragment"
-        android:label="@string/photoFragmentTitle"
+        android:label="fragment_photos"
         tools:layout="@layout/fragment_photos" >
 
         <action
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/videosFragment"
         android:name="com.example.kadraj.ui.videos.VideosFragment"
-        android:label="@string/videoFragmentTitle"
+        android:label="fragment_videos"
         tools:layout="@layout/fragment_videos" >
         <action
             android:id="@+id/action_videosFragment_to_mainFragment"
@@ -27,7 +27,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.kadraj.ui.MainFragment"
-        android:label="@string/mainPageTitle"
+        android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_photosFragment"
@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_mainFragment_to_videosFragment"
             app:destination="@id/videosFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_collectionsFragment"
+            app:destination="@id/collectionsFragment" />
         <action
             android:id="@+id/action_mainFragment_to_usersFragment"
             app:destination="@id/usersFragment" />
@@ -49,14 +52,66 @@
             app:destination="@id/mainFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/photoDetail"
+        android:name="com.example.kadraj.PhotoDetail"
+        android:label="fragment_photo_detail"
+        tools:layout="@layout/fragment_photo_detail" />
+
+    <fragment
+        android:id="@+id/userUpdateFragment"
+        android:name="com.example.kadraj.ui.user.UserUpdateFragment"
+        android:label="fragment_user_settings"
+        tools:layout="@layout/fragment_user_update">
+
+        <argument android:name="userID"
+            app:argType="Integer"/>
+    </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.kadraj.fragment.LoginFragment"
+        android:name="com.example.kadraj.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.kadraj.ui.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/collectionsFragment"
+        android:name="com.example.kadraj.ui.collections.CollectionsFragment"
+        android:label="fragment_collections"
+        tools:layout="@layout/fragment_collections" >
+        <action
+            android:id="@+id/action_collectionsFragment_to_collectionsDetailFragment"
+            app:destination="@id/collectionsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/collectionsDetailFragment"
+        android:name="CollectionsDetailFragment"
+        android:label="CollectionsDetailFragment">
+
+        <argument
+            android:name="collectionId"
+            app:argType="string" />
+
     </fragment>
 </navigation>

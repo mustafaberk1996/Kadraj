@@ -15,7 +15,6 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.room.RoomDatabase
 import com.example.kadraj.AppDatabase
-import com.example.kadraj.AppDatabase_Impl
 import com.example.kadraj.R
 import com.example.kadraj.data.state.LoginState
 import com.example.kadraj.databinding.FragmentLoginBinding
@@ -48,9 +47,6 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
         observeLogin()
 
-        binding.btnLogin.setOnClickListener {
-            viewModel.login(AppDatabase.invoke(requireContext()) ,binding.etUser.text.toString(), binding.etPassword.text.toString())
-        }
 
 
         binding.etUser.addTextChangedListener(object : TextWatcher {

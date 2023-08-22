@@ -35,16 +35,18 @@
             android:drawableLeft="@drawable/baseline_photo_camera_24"
             android:background="@drawable/main_btndesign"
             android:layout_marginTop="12dp"
-            android:text="Photo" />
+            android:text="@string/photoFragmentTitle" />
 
         <Button
             android:id="@+id/btnVideo"
             android:layout_width="match_parent"
             android:drawableLeft="@drawable/baseline_videocam_24"
             android:layout_height="wrap_content"
+
             android:layout_marginTop="12dp"
             android:background="@drawable/main_btndesign"
-            android:text="Videos" />
+           android:text="@string/videoFragmentTitle" />
+
         <Button
             android:id="@+id/btnUser"
             android:layout_width="match_parent"
@@ -55,13 +57,20 @@
             android:text="@string/user" />
 
         <Button
+            android:id="@+id/btnCollections"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Collections" />
+
+        <Button
             android:id="@+id/btnExit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:drawableLeft="@drawable/baseline_exit_to_app_24"
             android:layout_marginTop="12dp"
             android:background="@drawable/main_btndesign"
-            android:text="Exit" />
+            android:text="@string/exit" />
 
 
     </LinearLayout>

@@ -15,4 +15,11 @@
     <string name="remember_me">Remember me</string>
     <string name="login">Sign In</string>
     <string name="sign_up">Sign Up</string>
+    <string name="somethings_wrong">Something went wrong</string>
+    <string name="user_already_exists">User already exists</string>
+    <string name="user_not_found">User not found</string>
+    <string name="fill_in_the_blank">Please fill in the blanks</string>
+    <string name="user_information_wrong">User informations are wrong</string>
+    <string name="login_success">Progress successful</string>
+    <string name="passwords_not_equals">Passwords not equals</string>
 </resources>
