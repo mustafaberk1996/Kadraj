@@ -22,4 +22,7 @@
     <string name="user_information_wrong">User informations are wrong</string>
     <string name="login_success">Progress successful</string>
     <string name="passwords_not_equals">Passwords not equals</string>
+    <string name="user_title">Kullanıcı Sayfası</string>
+    <string name="register_title">Kayıt Ol</string>
+    <string name="collections_title">Koleksiyon Sayfası</string>
 </resources>

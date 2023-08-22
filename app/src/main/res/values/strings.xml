@@ -26,6 +26,11 @@
     <string name="login">Giriş Yap</string>
     <string name="sign_up">Kayıt Ol</string>
     <string name="passwords_not_equals">Parola eşleşmiyor</string>
+    <string name="login_title">Giriş Sayfası</string>
+    <string name="user_update_title">Kullanıcı Güncelleme</string>
+    <string name="user_title">Kullanıcı Sayfası</string>
+    <string name="register_title">Kayıt Ol</string>
+    <string name="collections_title">Koleksiyon Sayfası</string>
 
 
 </resources>
