@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_photosFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_photosFragment_to_photoDetail"
+            app:destination="@id/photoDetail" />
     </fragment>
     <fragment
         android:id="@+id/videosFragment"
@@ -50,6 +53,12 @@
     </fragment>
 
     <fragment
+        android:id="@+id/photoDetail"
+        android:name="com.example.kadraj.PhotoDetail"
+        android:label="fragment_photo_detail"
+        tools:layout="@layout/fragment_photo_detail" />
+
+    <fragment
         android:id="@+id/userUpdateFragment"
         android:name="com.example.kadraj.ui.user.UserUpdateFragment"
         android:label="fragment_user_settings"
@@ -58,7 +67,6 @@
         <argument android:name="userID"
             app:argType="Integer"/>
     </fragment>
-
 
     <fragment
         android:id="@+id/loginFragment"
