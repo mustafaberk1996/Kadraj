@@ -62,11 +62,7 @@
         android:id="@+id/userUpdateFragment"
         android:name="com.example.kadraj.ui.user.UserUpdateFragment"
         android:label="fragment_user_settings"
-        tools:layout="@layout/fragment_user_update">
-
-        <argument android:name="userID"
-            app:argType="Integer"/>
-    </fragment>
+        tools:layout="@layout/fragment_user_update" />
 
     <fragment
         android:id="@+id/loginFragment"
