@@ -3,11 +3,14 @@ package com.example.kadraj.ui.photoList
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
+import com.example.kadraj.PhotoDetail
 import com.example.kadraj.R
 import com.example.kadraj.data.api.model.Photo
 import com.example.kadraj.data.state.PhotoListState
@@ -33,10 +36,7 @@ class PhotosFragment : Fragment(R.layout.fragment_photos) {
 
     }
 
-    private fun onClick(photo: Photo){
 
-
-    }
 
 private fun observePhotoListState() {
     lifecycleScope.launch {
@@ -55,7 +55,13 @@ private fun observePhotoListState() {
                     is PhotoListState.Result->{
                         binding.rvPhotos.isVisible = true
                         binding.progressBar.isVisible = false
-                        binding.rvPhotos.adapter = PhotoAdapter(requireContext(),it.photos,this@PhotosFragment::onClick)
+                        binding.rvPhotos.adapter = PhotoAdapter(requireContext(),it.photos){photo->
+                            val bundle= bundleOf()
+                            bundle.putParcelable("photoDetail",photo)
+                            val photoDetail=PhotoDetail()
+                            photoDetail.arguments=bundle
+                            findNavController().navigate(R.id.action_photosFragment_to_photoDetail,bundle)
+                        }
                     }
                     is PhotoListState.Error->{
                         binding.rvPhotos.isVisible = false

@@ -34,7 +34,7 @@ class PhotoAdapter(private val context: Context, private val photos:List<Photo>,
            holder.ivPhoto.load(photo.src.medium)
 
             holder.itemView.setOnClickListener {
-                //    onClick(this)
+              onClick(photo)
             }
         }
     }

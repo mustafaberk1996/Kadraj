@@ -25,12 +25,16 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             findNavController().navigate(R.id.action_mainFragment_to_videosFragment)
         }
 
+        binding.btnCollections.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_collectionsFragment)
+        }
+
+
         binding.btnUser.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_usersFragment)
         }
         binding.btnExit.setOnClickListener {
             activity?.finish()
         }
-
     }
 }

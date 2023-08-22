@@ -1,9 +1,12 @@
 package com.example.kadraj.data.api.model
 
+import android.os.Parcelable
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity
 data class Photo(
     val alt: String,
@@ -18,4 +21,4 @@ data class Photo(
     val url: String,
     val width: Int,
     val isFavourite: Boolean = false
-)
+) : Parcelable

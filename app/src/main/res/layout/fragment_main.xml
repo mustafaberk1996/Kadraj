@@ -27,13 +27,13 @@
             android:id="@+id/btnPhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Photo" />
+            android:text="@string/photoFragmentTitle" />
 
         <Button
             android:id="@+id/btnVideo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Videos" />
+            android:text="@string/videoFragmentTitle" />
         <Button
             android:id="@+id/btnUser"
             android:layout_width="match_parent"
@@ -41,10 +41,16 @@
             android:text="@string/user" />
 
         <Button
+            android:id="@+id/btnCollections"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Collections" />
+
+        <Button
             android:id="@+id/btnExit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Exit" />
+            android:text="@string/exit" />
 
 
     </LinearLayout>
