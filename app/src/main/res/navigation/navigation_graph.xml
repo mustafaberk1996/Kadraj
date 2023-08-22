@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/photosFragment"
         android:name="com.example.kadraj.ui.photoList.PhotosFragment"
-        android:label="fragment_photos"
+        android:label="@string/photoFragmentTitle"
         tools:layout="@layout/fragment_photos" >
 
         <action
@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/videosFragment"
         android:name="com.example.kadraj.ui.videos.VideosFragment"
-        android:label="fragment_videos"
+        android:label="@string/videoFragmentTitle"
         tools:layout="@layout/fragment_videos" >
         <action
             android:id="@+id/action_videosFragment_to_mainFragment"
@@ -30,7 +30,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.kadraj.ui.MainFragment"
-        android:label="fragment_main"
+        android:label="@string/mainPageTitle"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_photosFragment"
@@ -48,7 +48,7 @@
     <fragment
         android:id="@+id/usersFragment"
         android:name="com.example.kadraj.ui.users.UsersFragment"
-        android:label="fragment_users"
+        android:label="@string/user_title"
         tools:layout="@layout/fragment_users" >
         <action
             android:id="@+id/action_usersFragment_to_mainFragment"
@@ -58,19 +58,19 @@
     <fragment
         android:id="@+id/photoDetail"
         android:name="com.example.kadraj.PhotoDetail"
-        android:label="fragment_photo_detail"
+        android:label="@string/photoFragmentTitle"
         tools:layout="@layout/fragment_photo_detail" />
 
     <fragment
         android:id="@+id/userUpdateFragment"
         android:name="com.example.kadraj.ui.user.UserUpdateFragment"
-        android:label="fragment_user_settings"
+        android:label="@string/user_update_title"
         tools:layout="@layout/fragment_user_update" />
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.kadraj.ui.login.LoginFragment"
-        android:label="fragment_login"
+        android:label="@string/login_title"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
@@ -83,7 +83,7 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.kadraj.ui.register.RegisterFragment"
-        android:label="fragment_register"
+        android:label="@string/register_title"
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
@@ -97,7 +97,7 @@
     <fragment
         android:id="@+id/collectionsFragment"
         android:name="com.example.kadraj.ui.collections.CollectionsFragment"
-        android:label="fragment_collections"
+        android:label="@string/collections_title"
         tools:layout="@layout/fragment_collections" >
         <action
             android:id="@+id/action_collectionsFragment_to_collectionsDetailFragment"
