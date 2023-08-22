@@ -8,7 +8,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.fragment.navArgs
 import com.example.kadraj.R
 import com.example.kadraj.data.state.GetUserState
 import com.example.kadraj.data.state.UpdateUserState
@@ -19,13 +18,12 @@ class UserUpdateFragment : Fragment(R.layout.fragment_user_update) {
 
     private lateinit var binding: FragmentUserUpdateBinding
     private val viewModel: UserUpdateViewModel by activityViewModels()
-    private val args:UserUpdateFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentUserUpdateBinding.bind(view)
 
-        viewModel.getUser(args.userID)
+        viewModel.getUser(1)
         observeGetUserState()
         observeUpdateUser()
 
@@ -35,7 +33,7 @@ class UserUpdateFragment : Fragment(R.layout.fragment_user_update) {
                 binding.etUserSurname.text.toString().trim(),
                 binding.etUserEmail.text.toString().trim(),
                 binding.etUserPassword.text.toString().trim(),
-                args.userID)
+                1)
         }
     }
 

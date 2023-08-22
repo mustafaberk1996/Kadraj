@@ -30,6 +30,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentLoginBinding.bind(view)
+        observeUserAddState()
         observeMessage()
         listeners()
 
@@ -41,6 +42,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 viewModel.message.collect{
                     when(it){
                         LoginMessageState.Idle ->{}
+                        LoginMessageState.UserAlreadyExists->{
+                            AlertDialog.Builder(requireContext()).setMessage(R.string.user_already_exists).create().show()
+                        }
                         LoginMessageState.Success ->{
                             AlertDialog.Builder(requireContext()).setMessage(R.string.login_success).create().show()
                         }
@@ -59,10 +63,32 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
     }
 
+    private fun observeUserAddState() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.CREATED){
+                viewModel.userAddState.collect{
+                    when(it){
+                        UserAddState.Idle ->{}
+                        UserAddState.Loading ->{
+                            binding.progressBar.isVisible = true
+                        }
+                        UserAddState.Success ->{
+                            binding.progressBar.isVisible = false
+                            findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
+                        }
+                        is UserAddState.Error ->{
+                            binding.progressBar.isVisible = false
+                            AlertDialog.Builder(requireContext()).setTitle(R.string.somethings_wrong).setMessage(it.throwable.message)
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     private fun listeners() {
         binding.btnSignUp.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+//            viewModel.insert(AppDatabase.invoke(requireContext()),binding.etUser.text.toString(), binding.etPassword.text.toString())
         }
     }
 }
