@@ -6,5 +6,4 @@ interface PhotoRepository {
 
     suspend fun getAllPhotos():List<Photo>
 
-    suspend fun getFavouritePhotos(): List<Photo>?
 }

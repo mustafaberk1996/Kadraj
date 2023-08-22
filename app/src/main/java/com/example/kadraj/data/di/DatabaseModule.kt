@@ -3,7 +3,6 @@ package com.example.kadraj.data.di
 import android.content.Context
 import androidx.room.Room
 import com.example.kadraj.AppDatabase
-import com.example.kadraj.data.dao.PhotoDao
 import com.example.kadraj.Constants
 import com.example.kadraj.data.dao.UserDao
 import dagger.Module
@@ -29,9 +28,4 @@ class DatabaseModule {
         return appDatabase.userDao()
     }
 
-    @Provides
-    @Singleton
-    fun providePhotoDao(appDatabase: AppDatabase): PhotoDao {
-        return appDatabase.photoDao()
-    }
 }

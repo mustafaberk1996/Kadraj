@@ -12,7 +12,6 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.kadraj.PhotoDetail
 import com.example.kadraj.R
-import com.example.kadraj.data.api.model.Photo
 import com.example.kadraj.data.state.PhotoListState
 import com.example.kadraj.databinding.FragmentPhotosBinding
 import com.google.android.material.snackbar.Snackbar

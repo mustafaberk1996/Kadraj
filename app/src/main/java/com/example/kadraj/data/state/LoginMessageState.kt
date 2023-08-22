@@ -6,4 +6,5 @@ sealed class LoginMessageState{
     object Empty:LoginMessageState()
     object UserNotFound:LoginMessageState()
     object InformationWrong:LoginMessageState()
+    object UserAlreadyExists:LoginMessageState()
 }

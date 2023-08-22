@@ -46,9 +46,10 @@ class CollectionsFragment : Fragment(R.layout.fragment_collections) {
                             AlertDialog.Builder(requireContext()).setMessage("BURADA HİÇ BİR ŞEY YOK").create().show()
                         }
                         is CollectionState.Result -> {
+                            //TODO Busra
                             adapter = CollectionsAdapter(requireContext(), it.collections) {
-                                val action = CollectionsFragmentDirections.actionCollectionsFragmentToCollectionsDetailFragment(it.id)
-                                findNavController().navigate(action)
+                                //val action = CollectionsFragmentDirections.actionCollectionsFragmentToCollectionsDetailFragment(it.id)
+                                //findNavController().navigate(R.action.)
 
                             }
                             binding.rvCollections.adapter = adapter

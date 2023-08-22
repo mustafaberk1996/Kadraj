@@ -7,9 +7,7 @@ import kotlinx.parcelize.Parcelize
 
 
 @Parcelize
-@Entity
 data class Src(
-    @PrimaryKey val srcId: Int = 0,
     val landscape: String,
     val large: String,
     val large2x: String,

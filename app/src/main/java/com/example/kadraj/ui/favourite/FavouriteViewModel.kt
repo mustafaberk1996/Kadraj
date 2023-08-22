@@ -19,13 +19,13 @@ class FavouriteViewModel @Inject constructor(private val photoRepository: PhotoR
 
     fun getFavouritePhotos() {
         viewModelScope.launch {
-            _favouritePhotoListState.emit(FavouritePhotoListState.Loading)
-
-            photoRepository.getFavouritePhotos()?.let {
-                _favouritePhotoListState.emit(FavouritePhotoListState.Result(it))
-            } ?: kotlin.run {
-                _favouritePhotoListState.emit(FavouritePhotoListState.Error(NullPointerException()))
-            }
+//            _favouritePhotoListState.emit(FavouritePhotoListState.Loading)
+//
+//            photoRepository.getFavouritePhotos()?.let {
+//                _favouritePhotoListState.emit(FavouritePhotoListState.Result(it))
+//            } ?: kotlin.run {
+//                _favouritePhotoListState.emit(FavouritePhotoListState.Error(NullPointerException()))
+//            }
         }
     }
 }
