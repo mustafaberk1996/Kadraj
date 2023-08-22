@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class VideoRepositoryImpl @Inject constructor(val video: VideoService):VideoRepository {
     override suspend fun getAllVideo(): List<Video> {
-        return video.getAllVideo("car").videos
+        return video.getAllVideo("Birds").videos
     }
 
 }
