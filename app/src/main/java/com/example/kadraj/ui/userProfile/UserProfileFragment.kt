@@ -42,7 +42,6 @@ class UserProfileFragment : Fragment(R.layout.fragment_user_profile) {
 
 
         binding.ivEdit.setOnClickListener {
-            //val action= UserProfileFragmentDirections.actionUserProfileFragmentToUserUpdateFragment(getId)
             findNavController().navigate(R.id.action_userProfileFragment_to_userUpdateFragment, bundleOf( GET_ID_KEY to getId))
         }
     }
