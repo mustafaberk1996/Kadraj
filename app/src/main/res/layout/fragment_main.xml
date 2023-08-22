@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background"
     tools:context=".ui.MainFragment">
 
     <LinearLayout
@@ -12,32 +13,44 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="30dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="100dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
         android:layout_margin="20dp"
         android:background="@drawable/linear_layout_backround"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:src="@drawable/baseline_camera_alt_24"
-            android:layout_width="150dp"
+            android:background="@drawable/camera_lens"
+            android:layout_width="200dp"
             android:layout_height="200dp"/>
 
         <Button
             android:id="@+id/btnPhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/baseline_photo_camera_24"
+            android:background="@drawable/main_btndesign"
+            android:layout_marginTop="12dp"
             android:text="@string/photoFragmentTitle" />
 
         <Button
             android:id="@+id/btnVideo"
             android:layout_width="match_parent"
+            android:drawableLeft="@drawable/baseline_videocam_24"
             android:layout_height="wrap_content"
-            android:text="@string/videoFragmentTitle" />
+            android:text="@string/videoFragmentTitle"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/main_btndesign"/>
         <Button
             android:id="@+id/btnUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/baseline_supervised_user_circle_24"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/main_btndesign"
             android:text="@string/user" />
 
         <Button
@@ -50,7 +63,10 @@
             android:id="@+id/btnExit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/exit" />
+            android:text="@string/exit"
+            android:drawableLeft="@drawable/baseline_exit_to_app_24"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/main_btndesign" />
 
 
     </LinearLayout>
