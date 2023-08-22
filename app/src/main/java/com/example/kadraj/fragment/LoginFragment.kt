@@ -49,7 +49,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         observeLogin()
 
         binding.btnLogin.setOnClickListener {
-            viewModel.login(AppDatabase.invoke(requireContext()) ,binding.etUser.text.toString(), binding.etPassword.text.toString())
+//            viewModel.login(AppDatabase.invoke(requireContext()) ,binding.etUser.text.toString(), binding.etPassword.text.toString())
         }
 
 

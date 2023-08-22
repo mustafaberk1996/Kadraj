@@ -22,30 +22,30 @@ class LoginViewModel:ViewModel() {
     val message:SharedFlow<LoginMessageState> = _message
 
     fun insert(database: AppDatabase, email:String, password:String) {
-        viewModelScope.launch(Dispatchers.IO) {
-            if(!email.isNullOrEmpty() && !password.isNullOrEmpty()){
-                val user = database.userDao().getUserByEmail(email)
-                user?.let {
-                    _message.emit(LoginMessageState.UserAlreadyExists)
-                }?: kotlin.run {
-                    kotlin.runCatching {
-                        _userAddState.emit(UserAddState.Loading)
-                        val user = User(
-                            email = email,
-                            password = password
-                        )
-                        database.userDao().insert(user)
-                    }.onSuccess {
-                        _message.emit(LoginMessageState.Success)
-                        _userAddState.value = UserAddState.Success
-                    }.onFailure {
-                        _userAddState.value = UserAddState.Error(it)
-                    }
-                }
-            }else{
-                _message.emit(LoginMessageState.Empty)
-            }
-        }
+//        viewModelScope.launch(Dispatchers.IO) {
+//            if(!email.isNullOrEmpty() && !password.isNullOrEmpty()){
+//                val user = database.userDao().getUserByEmail(email)
+//                user?.let {
+//                    _message.emit(LoginMessageState.UserAlreadyExists)
+//                }?: kotlin.run {
+//                    kotlin.runCatching {
+//                        _userAddState.emit(UserAddState.Loading)
+//                        val user = User(
+//                            email = email,
+//                            password = password
+//                        )
+//                        database.userDao().insert(user)
+//                    }.onSuccess {
+//                        _message.emit(LoginMessageState.Success)
+//                        _userAddState.value = UserAddState.Success
+//                    }.onFailure {
+//                        _userAddState.value = UserAddState.Error(it)
+//                    }
+//                }
+//            }else{
+//                _message.emit(LoginMessageState.Empty)
+//            }
+//        }
     }
 
 

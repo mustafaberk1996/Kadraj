@@ -88,7 +88,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private fun listeners() {
         binding.btnSignUp.setOnClickListener {
-            viewModel.insert(AppDatabase.invoke(requireContext()),binding.etUser.text.toString(), binding.etPassword.text.toString())
+//            viewModel.insert(AppDatabase.invoke(requireContext()),binding.etUser.text.toString(), binding.etPassword.text.toString())
         }
     }
 }
