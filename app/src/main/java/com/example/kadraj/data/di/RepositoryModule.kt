@@ -30,10 +30,6 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideCollectionRepository(collectionRepositoryImpl: CollectionRepositoryImpl):CollectionRepository = collectionRepositoryImpl
-
-    @Provides
-    @Singleton
     fun provideUserRepository(userRepositoryImpl: UserRepositoryImpl) :UserRepository = userRepositoryImpl
 
     @Provides
