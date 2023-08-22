@@ -7,15 +7,19 @@ import androidx.room.RoomDatabase
 import com.example.kadraj.Constants.DATABASE_NAME
 import com.example.kadraj.data.api.model.Photo
 import com.example.kadraj.data.dao.PhotoDao
+import com.example.kadraj.data.dao.PhotoFavouriteDao
 import com.example.kadraj.data.dao.UserDao
+import com.example.kadraj.data.entity.PhotoFavourite
 import com.example.kadraj.data.entity.User
 
 @Database(
-    entities = [User::class, Photo::class], version = 1, exportSchema = false
+    entities = [User::class, Photo::class, PhotoFavourite::class], version = 1, exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun photoDao(): PhotoDao
+    abstract fun photoFavouriteDao(): PhotoFavouriteDao
+
 
     companion object {
         @Volatile

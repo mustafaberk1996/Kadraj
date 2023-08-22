@@ -1,12 +1,12 @@
 package com.example.kadraj.data.dao
 
+
 import androidx.room.Dao
+import androidx.room.Insert
 import androidx.room.Query
-import com.example.kadraj.data.api.model.Photo
+import com.example.kadraj.data.entity.User
 
 @Dao
 interface PhotoDao {
-
-    @Query("SELECT * FROM photo WHERE isFavourite = :isFavourite")
-    suspend fun getFavouritePhotos(isFavourite: Boolean = true): List<Photo>?
+    
 }

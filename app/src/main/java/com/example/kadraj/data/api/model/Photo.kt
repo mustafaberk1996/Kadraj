@@ -17,5 +17,5 @@ data class Photo(
     @Embedded val src: Src,
     val url: String,
     val width: Int,
-    val isFavourite: Boolean = false
+    var isFavourite: Boolean = false
 )
