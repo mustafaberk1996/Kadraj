@@ -1,4 +1,4 @@
-package com.example.kadraj.ui.photoList
+package com.example.kadraj.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

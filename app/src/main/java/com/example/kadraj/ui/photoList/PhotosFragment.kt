@@ -9,6 +9,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.kadraj.R
+import com.example.kadraj.adapter.PhotoAdapter
 import com.example.kadraj.data.api.model.Photo
 import com.example.kadraj.data.state.PhotoListState
 import com.example.kadraj.databinding.FragmentPhotosBinding
