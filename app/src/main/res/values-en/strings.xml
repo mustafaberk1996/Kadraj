@@ -21,4 +21,5 @@
     <string name="fill_in_the_blank">Please fill in the blanks</string>
     <string name="user_information_wrong">User informations are wrong</string>
     <string name="login_success">Progress successful</string>
+    <string name="passwords_not_equals">Passwords not equals</string>
 </resources>

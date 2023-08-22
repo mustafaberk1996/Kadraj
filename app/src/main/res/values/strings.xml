@@ -25,5 +25,6 @@
     <string name="remember_me">Beni Hatırla</string>
     <string name="login">Giriş Yap</string>
     <string name="sign_up">Kayıt Ol</string>
+    <string name="passwords_not_equals">Parola eşleşmiyor</string>
 
 </resources>
