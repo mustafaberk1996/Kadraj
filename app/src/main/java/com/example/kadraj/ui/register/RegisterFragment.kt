@@ -18,7 +18,6 @@ import com.example.kadraj.data.state.RegisterMessageState
 import com.example.kadraj.data.state.UserAddState
 import com.example.kadraj.databinding.FragmentRegisterBinding
 import kotlinx.coroutines.launch
-import com.example.kadraj.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment(R.layout.fragment_register) {
 

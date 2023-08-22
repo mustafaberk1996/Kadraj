@@ -136,6 +136,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                         LoginMessageState.InformationWrong ->{
                             AlertDialog.Builder(requireContext()).setMessage(R.string.user_information_wrong).create().show()
                         }
+
+                        else -> {}
                     }
                 }
             }
@@ -159,6 +161,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                             binding.progressBarLogin.isVisible = false
                             AlertDialog.Builder(requireContext()).setTitle(R.string.somethings_wrong).setMessage(it.throwable.message)
                         }
+
+                        else -> {}
                     }
                 }
             }
@@ -167,7 +171,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private fun listeners() {
         binding.btnSignUp.setOnClickListener {
-//            viewModel.insert(AppDatabase.invoke(requireContext()),binding.etUser.text.toString(), binding.etPassword.text.toString())
+          findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
 }
