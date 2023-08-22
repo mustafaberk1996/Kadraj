@@ -7,6 +7,7 @@
     android:background="@drawable/background"
     tools:context=".ui.MainFragment">
 
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -44,6 +45,7 @@
             android:text="@string/videoFragmentTitle"
             android:layout_marginTop="12dp"
             android:background="@drawable/main_btndesign"/>
+
         <Button
             android:id="@+id/btnUser"
             android:layout_width="match_parent"
@@ -67,6 +69,7 @@
             android:drawableLeft="@drawable/baseline_exit_to_app_24"
             android:layout_marginTop="12dp"
             android:background="@drawable/main_btndesign" />
+
 
 
     </LinearLayout>
