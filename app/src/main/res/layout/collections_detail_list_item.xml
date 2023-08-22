@@ -5,20 +5,15 @@
     android:padding="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
-    <TextView
-        android:id="@+id/tvCollectionTitle"
+    <ImageView
+        android:id="@+id/ivCollections"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="200dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:background="@drawable/text_view_background"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerCrop"
+
         />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

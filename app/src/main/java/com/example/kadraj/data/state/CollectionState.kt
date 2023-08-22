@@ -1,7 +1,6 @@
 package com.example.kadraj.data.state
 
-import com.example.kadraj.data.api.model.Collection
-import com.example.kadraj.data.api.model.Photo
+import com.example.kadraj.data.api.model.collection.Collection
 
 sealed class CollectionState {
     object Idle : CollectionState()

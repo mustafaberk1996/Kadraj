@@ -16,18 +16,19 @@ class CollectionsViewModel @Inject constructor(private val collectionRepository:
     private val _collectionState : MutableStateFlow<CollectionState> = MutableStateFlow(CollectionState.Idle)
     val collectionState : StateFlow<CollectionState> = _collectionState
 
+
     fun getCollections() {
         viewModelScope.launch {
             kotlin.runCatching {
                 _collectionState.value = CollectionState.Loading
-                val collections = collectionRepository.getCollections()
+                val collections = collectionRepository.getCollections().collections
                 if(collections.isNotEmpty()) {
                     _collectionState.value = CollectionState.Result(collections)
                 }else{
                     _collectionState.value = CollectionState.Empty
                 }
             }.onFailure {
-                _collectionState.value = CollectionState.Error(                                              )
+                _collectionState.value = CollectionState.Error()
             }
         }
     }

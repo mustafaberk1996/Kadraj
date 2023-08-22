@@ -1,5 +1,4 @@
-package com.example.kadraj.ui.collections
-
+import CollectionsDetailFragmentArgs.CollectionsDetailFragmentArgs
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
@@ -9,55 +8,56 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.kadraj.R
-import com.example.kadraj.adapter.CollectionsAdapter
-import com.example.kadraj.data.state.CollectionState
-import com.example.kadraj.databinding.FragmentCollectionsBinding
+import com.example.kadraj.adapter.CollectionDetailAdapter
+import com.example.kadraj.data.state.CollectionDetailState
+import com.example.kadraj.databinding.FragmentCollectionsDetailBinding
+import com.example.kadraj.ui.collectionsDetail.CollectionsDetailViewModel
 import kotlinx.coroutines.launch
 
 
-class CollectionsFragment : Fragment(R.layout.fragment_collections) {
-    lateinit var binding: FragmentCollectionsBinding
-    private val viewModel:CollectionsViewModel by activityViewModels()
-    lateinit var adapter: CollectionsAdapter
+class CollectionsDetailFragment : Fragment(R.layout.fragment_collections_detail) {
+    lateinit var binding: FragmentCollectionsDetailBinding
+    private val viewModel: CollectionsDetailViewModel by activityViewModels()
+    lateinit var adapter: CollectionDetailAdapter
+    val args: CollectionsDetailFragmentArgs by navArgs()
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding = FragmentCollectionsDetailBinding.bind(view)
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentCollectionsBinding.bind(view)
 
-        viewModel.getCollections()
-        observeCollectionState()
+
+
+        viewModel.getCollectionById(args.collectionId)
+        observeCollectionDetailState()
     }
 
-    private fun observeCollectionState() {
+    private fun observeCollectionDetailState() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.CREATED) {
-                viewModel.collectionState.collect {
+                viewModel.collectionDetailState.collect {
                     when(it) {
-                        CollectionState.Idle -> {}
-                        CollectionState.Loading -> {
+                        CollectionDetailState.Idle -> {}
+                        CollectionDetailState.Loading -> {
                             binding.rvCollections.isVisible = false
                             binding.progressBar.isVisible = true
                         }
-                        CollectionState.Empty -> {
+                        CollectionDetailState.Empty -> {
                             binding.rvCollections.isVisible = false
                             binding.progressBar.isVisible = false
                             AlertDialog.Builder(requireContext()).setMessage("BURADA HİÇ BİR ŞEY YOK").create().show()
                         }
-                        is CollectionState.Result -> {
-                            adapter = CollectionsAdapter(requireContext(), it.collections) {
-                                val action = CollectionsFragmentDirections.actionCollectionsFragmentToCollectionsDetailFragment(it.id)
-                                findNavController().navigate(action)
-
-                            }
+                        is CollectionDetailState.Result -> {
+                            // adapter = CollectionDetailAdapter(requireContext(), it.collectionId)
                             binding.rvCollections.adapter = adapter
                             binding.rvCollections.isVisible = true
                             binding.progressBar.isVisible = false
 
 
                         }
-                        is CollectionState.Error -> {
+                        is CollectionDetailState.Error -> {
                             binding.rvCollections.isVisible = false
                             binding.progressBar.isVisible = false
                             AlertDialog.Builder(requireContext()).setMessage("BİR SORUN OLUŞTU").create().show()

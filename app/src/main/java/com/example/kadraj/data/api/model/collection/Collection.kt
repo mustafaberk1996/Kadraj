@@ -1,9 +1,7 @@
-package com.example.kadraj.data.api.model
-
-import kotlin.collections.Collection
+package com.example.kadraj.data.api.model.collection
 
 data class Collection(
-    val description: Any,
+    val description: String,
     val id: String,
     val media_count: Int,
     val photos_count: Int,

@@ -1,4 +1,6 @@
-package com.example.kadraj.data.api.model
+package com.example.kadraj.data.api.model.collection
+
+import com.example.kadraj.data.api.model.collection.Collection
 
 data class CollectionResponse(
     val collections: List<Collection>,

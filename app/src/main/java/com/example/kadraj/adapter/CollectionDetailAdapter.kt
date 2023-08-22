@@ -1,20 +1,22 @@
 package com.example.kadraj.adapter
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.kadraj.data.api.model.collection.Collection
+import com.example.kadraj.data.api.model.collection.CollectionContentResponse
+import com.example.kadraj.databinding.CollectionsDetailListItemBinding
 import com.example.kadraj.databinding.CollectionsListItemBinding
 
-class CollectionsAdapter(
-    val context: Context, val collections: List<Collection>, val onClick:(collection:Collection) -> Unit
-):
-    RecyclerView.Adapter<CollectionsAdapter.CustomViewHolder>() {
+class CollectionDetailAdapter(
+    val context: Context, val collections: List<CollectionContentResponse>):
+    RecyclerView.Adapter<CollectionDetailAdapter.CustomViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         return CustomViewHolder(
-            CollectionsListItemBinding.inflate(LayoutInflater.from(context), parent, false)
+            CollectionsDetailListItemBinding.inflate(LayoutInflater.from(context), parent, false)
         )
     }
 
@@ -24,17 +26,14 @@ class CollectionsAdapter(
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         val collection = collections[position]
-        holder.tvCollectionTitle.text = collection.title
+        holder.ivCollection.load(collection.media)
 
-        holder.itemView.setOnClickListener {
-            onClick(collection)
-        }
 
     }
 
-    class CustomViewHolder(binding: CollectionsListItemBinding): RecyclerView.ViewHolder(binding.root) {
+    class CustomViewHolder(binding: CollectionsDetailListItemBinding): RecyclerView.ViewHolder(binding.root) {
 
-        val tvCollectionTitle = binding.tvCollectionTitle
+        val ivCollection = binding.ivCollections
 
     }
 }

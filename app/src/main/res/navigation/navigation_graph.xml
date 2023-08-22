@@ -85,5 +85,19 @@
         android:id="@+id/collectionsFragment"
         android:name="com.example.kadraj.ui.collections.CollectionsFragment"
         android:label="fragment_collections"
-        tools:layout="@layout/fragment_collections" />
+        tools:layout="@layout/fragment_collections" >
+        <action
+            android:id="@+id/action_collectionsFragment_to_collectionsDetailFragment"
+            app:destination="@id/collectionsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/collectionsDetailFragment"
+        android:name="CollectionsDetailFragment"
+        android:label="CollectionsDetailFragment">
+
+        <argument
+            android:name="collectionId"
+            app:argType="string" />
+
+    </fragment>
 </navigation>
